@@ -24,4 +24,4 @@ fn main() {
             return;
         }
     };
-};
+}
