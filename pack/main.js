@@ -5,7 +5,7 @@ exports.handler = function(event, context) {
     console.log(event["email"]);
 
     // spawn a child process with our email-checker-linux binary and the event["email"] value for our argument.
-    var proc = child_process.spawn('./target/release/email-checker-linux', [ event["email"] ], { stdio: 'inherit' });
+    var proc = child_process.spawn('./email-checker', [ event["email"] ], { stdio: 'inherit' });
 
     proc.on('close', function(code) {
         if(code !== 0) {
